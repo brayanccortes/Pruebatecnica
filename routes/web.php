@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\formcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('formulario');
 });
+Route::get('/log-in', function () {
+    return view('login');
+});
+
+
+
+Route::get('/f', 'formcontroller@index');
+Route::get('/formulario', 'Formulariocontroller@index' );
+
+Route::get('/form','Formulariocontroller@formulario');
+
+Route::get('/mostrar-fecha',function(){
+    return view('Mostrarfecha');
+});
+

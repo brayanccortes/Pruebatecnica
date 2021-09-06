@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\formcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('/register',  function (Request $request) {
+   
+    $formController = new formcontroller();
+    $formController->register($request);
+} );
+Route::post('/login', function (Request $request) {
+   
+    $formController = new formcontroller();
+    $formController->login($request);
 });
